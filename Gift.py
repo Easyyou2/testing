@@ -28,7 +28,7 @@ class GiftExchange():
             valid = True
             assignment = {}
             for i in range(len(givers)):
-                giver = giver[i]
+                giver = givers[i]
                 receiver = receivers[i]
                 if giver == receiver:
                     valid = False
@@ -40,7 +40,9 @@ class GiftExchange():
             if valid:
                 break
 
-    print("hello")
+        for giver in assignment:
+            print(giver, " gives a gift to", assignment[giver])
+
         
                 
 
@@ -51,7 +53,7 @@ class GiftExchange():
 
 
 
-test = GiftExchange((("a","b"),("c","d")))
+test = GiftExchange((("a","b"),("c","d"),("e","f")))
 
 test.StartExchange()
         

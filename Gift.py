@@ -4,21 +4,50 @@ import random
 class GiftExchange():
 
     def __init__(self, particpant_pairs):
+      # LIST OF TUPLES
       self.participant_pairs = particpant_pairs 
 
 
     def StartExchange(self):
-        participants = {}
+        partners = {}
 
         givers = []
 
         for pair in self.participant_pairs:
           a = pair[0]
           b = pair[1]
-          participants[a] = b
-          participants[b] = a
+          partners[a] = b
+          partners[b] = a
+          givers.append(a)
+          givers.append(b)
 
-        print(participants)
+        receivers = list(givers)
+            
+        while True:
+            random.shuffle(receivers)
+            valid = True
+            assignment = {}
+            for i in range(len(givers)):
+                giver = giver[i]
+                receiver = receivers[i]
+                if giver == receiver:
+                    valid = False
+                    break
+                if receiver == partners[giver]:
+                    valid = False
+                    break
+                assignment[giver] = receiver
+            if valid:
+                break
+
+    print("hello")
+        
+                
+
+        
+
+
+
 
 
 
@@ -27,4 +56,4 @@ test = GiftExchange((("a","b"),("c","d")))
 test.StartExchange()
         
 
-        
+       
